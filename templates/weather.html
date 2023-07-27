@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Weather Forecast {% endblock %}</h1>
+    <ul>
+        {% for index in range(data.hourly.time|length) %}
+            <li>Date: {{ data.hourly.time[index] }}</li>
+            <li>Temperature: {{ data.hourly.temperature_2m[index] }} °C</li>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}
